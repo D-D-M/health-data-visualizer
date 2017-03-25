@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325212726) do
+ActiveRecord::Schema.define(version: 20170325220323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 20170325212726) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "age"
+    t.string   "gender"
+    t.float    "height"
+    t.float    "weight"
+    t.index ["age", "height", "weight"], name: "index_users_on_age_and_height_and_weight", using: :btree
   end
 
 end
