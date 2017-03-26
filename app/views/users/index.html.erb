@@ -1,8 +1,11 @@
 <div>
   Hello. There are <%= @users.size %> users.
-  <%= link_to 'Create User', new_user_path %>
+  <%= link_to 'Create User', new_user_path %></br>
+
+  <%= link_to 'Run a query', new_data_query_path %>
 </div>
 
+<h2>Sample Data for All Users</h2>
 <div id="user-pie-chart__age">
   <h3>Age</h3>
   <%= pie_chart @users.group(:age).count %>
@@ -13,5 +16,5 @@
 </div>
 <div id="user-pie-chart__weight">
   <h3>Weight</h3>
-  <%= pie_chart @users.group(:weight).count %>
+  <%= bar_chart @users.group(:weight).count %>
 </div>

@@ -55,4 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # For charts and data visualization
 gem 'chartkick'
 
+gem 'countries'
+gem 'faker'
+
 ruby '2.4.0'
