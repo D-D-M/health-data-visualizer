@@ -57,5 +57,6 @@ gem 'chartkick'
 
 gem 'countries'
 gem 'faker'
+gem 'annotate'
 
 ruby '2.4.0'
