@@ -1,7 +1,17 @@
 <div>
   Hello. There are <%= @users.size %> users.
   <%= link_to 'Create User', new_user_path %>
-  <% @users.each do |user| %>
-    <%= render partial: 'user', locals: {user: user} %>
-  <% end %>
+</div>
+
+<div id="user-pie-chart__age">
+  <h3>Age</h3>
+  <%= pie_chart @users.group(:age).count %>
+</div>
+<div id="user-pie-chart__gender">
+  <h3>Gender</h3>
+  <%= pie_chart @users.group(:gender).count %>
+</div>
+<div id="user-pie-chart__weight">
+  <h3>Weight</h3>
+  <%= pie_chart @users.group(:weight).count %>
 </div>

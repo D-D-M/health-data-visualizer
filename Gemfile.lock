@@ -41,6 +41,7 @@ GEM
     arel (7.1.4)
     builder (3.2.3)
     byebug (9.0.6)
+    chartkick (2.2.3)
     concurrent-ruby (1.0.5)
     debug_inspector (0.0.2)
     erubis (2.7.0)
@@ -148,6 +149,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  chartkick
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
