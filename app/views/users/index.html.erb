@@ -1,0 +1,7 @@
+<div>
+  Hello. There are <%= @users.size %> users.
+  <%= link_to 'Create User', new_user_path %>
+  <% @users.each do |user| %>
+    <%= render partial: 'user', locals: {user: user} %>
+  <% end %>
+</div>

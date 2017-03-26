@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325220323) do
+ActiveRecord::Schema.define(version: 20170325233001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 20170325220323) do
     t.string   "gender"
     t.float    "height"
     t.float    "weight"
+    t.string   "name"
     t.index ["age", "height", "weight"], name: "index_users_on_age_and_height_and_weight", using: :btree
+    t.index ["name"], name: "index_users_on_name", using: :btree
   end
 
 end
