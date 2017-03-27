@@ -16,3 +16,4 @@
 //= require_tree .
 //= require highcharts
 //= require chartkick
+//= require filterrific/filterrific-jquery

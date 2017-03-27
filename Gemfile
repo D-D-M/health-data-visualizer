@@ -52,8 +52,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# For charts and data visualization
+# For charts and data visualization/filtering
 gem 'chartkick'
+gem 'filterrific'
+gem 'will_paginate'
 
 gem 'countries'
 gem 'faker'

@@ -1,0 +1,40 @@
+<div id="filterrific_results">
+
+  <div>
+    <%= page_entries_info users %>
+  </div>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Registered at</th>
+    </tr>
+    <% users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.country.name %></td>
+        <td><%= user.decorated_created_at %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <div id="user-pie-chart__age">
+    <h3>Age</h3>
+    <%= pie_chart @users.group(:age).count %>
+  </div>
+
+  <div id="user-pie-chart__gender">
+    <h3>Gender</h3>
+    <%= pie_chart @users.group(:gender).count %>
+  </div>
+
+  <%# GEO charts work with Google Charts, look into this %>
+  <!-- <div id="user&#45;geo&#45;chart__country"> -->
+    <!-- <h3>Country</h3> -->
+    <%# geo_chart User.group(:country).count %>
+  <!-- </div> -->
+
+</div>
+
+<%= will_paginate users %>

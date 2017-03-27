@@ -1,0 +1,35 @@
+<h1>Users</h1>
+
+<%#
+  Filterrific adds the `form_for_filterrific` view helper:
+  * adds dom id 'filterrific_filter'
+  * applies javascript behaviors:
+      * AJAX form submission on change
+      * AJAX spinner while AJAX request is being processed
+  * sets form_for options like :url, :method and input name prefix
+%>
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Country
+    <%= f.select(
+      :with_country_id,
+      @filterrific.select_options[:with_country_id],
+      { include_blank: '- Any -' }
+    ) %>
+  </div>
+  <div>
+    Gender
+    <%= f.select(
+      :gender,
+      @filterrific.select_options[:gender],
+      { include_blank: '- Any -' }
+    ) %>
+  </div>
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%= render_filterrific_spinner %>
+<% end %>
+
+<%= render(
+  partial: 'users/list',
+  locals: { users: @users }
+) %>
